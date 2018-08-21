@@ -113,10 +113,32 @@ function removeIdx(arr,idx){
 console.log(removeIdx([1,2,3,4],2))*/
 
 
-(function test( ){
-  	var a=b=5;
-  	console.log(typeof a);   //number
-  	console.log(typeof b);   //number
-})()
-console.log(typeof a);  //undefined
-console.log(typeof b)   //number
+// (function test( ){
+//   	var a=b=5;
+//   	console.log(typeof a);   //number
+//   	console.log(typeof b);   //number
+// })()
+// console.log(typeof a);  //undefined
+// console.log(typeof b)   //number
+
+
+
+// 用Js实现随机选取10～100之间的10个数字，存入一个数组，并排序。
+var result = [];
+for(var i = 0 ; i < 10 ; i++){
+	var a = parseInt(Math.random() * 91) + 10;
+	for(var j = 0 ; j < result.length ; j++){
+		if(result[i] === a){
+			break;
+		}
+	}
+	if(j == result.length){
+		result.push(a);
+	}
+}
+
+result.sort(function(a,b){
+	return a - b;
+})
+
+console.log(result);
